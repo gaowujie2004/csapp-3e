@@ -367,7 +367,7 @@ float_bits float_absval(float_bits f) {
         // NaN
         return f;
     } else {
-        // 将某一位取反，那就先获取这位值。异或
+        // 最高位（符号位清零）
         return f & 0x7FFFFFFF;
     }
 }
