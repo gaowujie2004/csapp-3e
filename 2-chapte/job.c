@@ -449,12 +449,12 @@ float_bits float_half(float_bits f) {
 
     // 1 <= exp <= UMax-1   --->   1 <= exp <= 254
     // NaN or 无穷大
-    if (exp == ~0) {
+    if (exp == 0xFF) {
         return f;
     }
 
 
-    if (exp == 1) {
+    if (exp == 0) {
         // 非规格化
         
     } else {
