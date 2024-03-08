@@ -480,11 +480,11 @@ int float_f2i(float_bits f) {
     int res_int = 0;
 
     // NaN or 无穷
-    if (exp == ~0) {
+    if (exp == 0xFF) {
         return 0x80000000;
     }
 
-    // 0、非规格化、指数为0
+    // 0、非规格化、指数为负数0
     if (exp < 127) {
         // E=exp-127，E<0则说明符浮点数<1.0，是个很小的浮点数
         return 0;
