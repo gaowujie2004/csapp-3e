@@ -410,7 +410,7 @@ float_bits float_twice(float_bits f) {
     
     if (exp == 254) {
         // 指数溢出，无穷大
-        exp = ~0;
+        exp = 0xFF;
         frac = 0;
     } else {
         // 正常范围
