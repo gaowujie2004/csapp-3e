@@ -491,11 +491,17 @@ int float_f2i(float_bits f) {
     }
 
     // E>=0
-    int need_frac_num = exp - 127;  // E
-    unsigned int low = frac >> (23-need_frac_num);
-    unsigned int heig = 1 << need_frac_num;
-    res_int = heig | low;
+    int E = exp - 127;
+    int M = frac | 0x800000;        // 单精度浮点数，M=1.frac，共24位。
+
+    // TODO 重要的理解
+    if (E > 23) {
+        res_int = M << (E-23);
+    } else {
+        res_int = M >> (23-E);
+    }
     
+
     if (sign) {
         return -res_int;
     } else {
