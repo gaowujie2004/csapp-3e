@@ -408,7 +408,11 @@ float_bits float_twice(float_bits f) {
     // unsigned int res_exp = exp + 1;
     // 因为这是一个2，小数部分不会相乘。
     
-    if (exp == 254) {
+    if (exp == 0) {
+        // TODO: 一开始忽略了这个条件。
+        // 非规格化，指数一变，exp就要改变，frac也要改变。
+        frac <<= 1;
+    } else if (exp == 254) {
         // 指数溢出，无穷大
         exp = 0xFF;
         frac = 0;
