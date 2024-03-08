@@ -1,0 +1,13 @@
+{
+    "C_Cpp.errorSquiggles": "disabled",
+    "files.associations": {
+        "*.asm": "assembly",
+        "stdio.h": "c",
+        "cmath": "c"
+    },
+    "C_Cpp.formatting": "clangFormat",
+    "C_Cpp.vcFormat.indent.caseLabels": true,
+    "C_Cpp.vcFormat.newLine.beforeElse": false,
+    "C_Cpp.vcFormat.newLine.beforeCatch": false,
+    "C_Cpp.vcFormat.newLine.closeBraceSameLine.emptyFunction": true,
+}
