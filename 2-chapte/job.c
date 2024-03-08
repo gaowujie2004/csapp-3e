@@ -398,7 +398,7 @@ float_bits float_twice(float_bits f) {
     unsigned int frac = f & 0x7FFFFF;
 
     // 1 <= exp <= UMax-1   --->   1 <= exp <= 254
-    if (exp == ~0) {
+    if (exp == 0xFF) {
         // NaN or 无穷大
         return f;
     }
@@ -588,10 +588,11 @@ float_bits float_i2f(int num) {
 }
 
 int main() {
-    unsigned int x = 0B11111111111111111111111110000000;
-    unsigned int y = (float)x;
-    printf("转为浮点，再转int=%u\n", y);
-    show_float((float)x);
+    // unsigned int x = 0B11111111111111111111111111111111;
+    // unsigned int y = (float)x;
+    float z = 999999999;
+     int x = (int)z;
+    show_binary(x);
     return 0;
 }
 
