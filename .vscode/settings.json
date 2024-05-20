@@ -3,7 +3,10 @@
     "files.associations": {
         "*.asm": "assembly",
         "stdio.h": "c",
-        "cmath": "c"
+        "cmath": "c",
+        "compare": "c",
+        "string.h": "c",
+        "immintrin.h": "c"
     },
     "C_Cpp.formatting": "clangFormat",
     "C_Cpp.vcFormat.indent.caseLabels": true,

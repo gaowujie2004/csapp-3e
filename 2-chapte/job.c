@@ -488,9 +488,10 @@ int float_f2i(float_bits f) {
         return 0x80000000;
     }
 
-    // 0、非规格化、指数为负数0
+    // 非规格化(exp为0)——可以表示很小的小数以及0、指数E为负数0
     if (exp < 127) {
         // E=exp-127，E<0则说明符浮点数<1.0，是个很小的浮点数
+        // exp=0，则表示0
         return 0;
     }
 
@@ -592,11 +593,10 @@ float_bits float_i2f(int num) {
 }
 
 int main() {
-    // unsigned int x = 0B11111111111111111111111111111111;
-    // unsigned int y = (float)x;
-    float z = 999999999;
-     int x = (int)z;
-    show_binary(x);
+    __int64 a1 = -1;
+    show_binary_bytes((char *)&a1, sizeof(__int64));
+
+    printf("\n%x", a1);
     return 0;
 }
 
